@@ -17,7 +17,8 @@ RUN pip3 install torchsde \
     xformers 
 
 EXPOSE 8188
+EXPOSE 8080
 # RUN git clone https://github.com/comfyanonymous/ComfyUI.git
 
-# docker build -t sd-xl .
-# docker run --it -rm -p 8188:8188 -v /d/obara/stable-diffusion-xl:/app sd-xl /bin/bash
+# docker build -t sdxl .
+# docker run --gpus all -it --rm -p 8188:8188 -v /d/obara/stable-diffusion-xl:/app sdxl /bin/bash
