@@ -1,8 +1,24 @@
+version: '3.9'
+
 services:
+  setup:
+    build: .
+    dockerfile: Dockerfile.setup
+    volumes:
+      - .:/app
+    command: /app/download.sh
   sdxl:
     build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    dockerfile: Dockerfile.sdxl
+    command: python ComfyUI/main.py --listen --port 8188
     volumes:
       - .:/app
     ports:
       - "8188:8188"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
