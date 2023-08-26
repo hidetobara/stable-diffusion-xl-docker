@@ -16,6 +16,8 @@ RUN pip3 install torchsde \
     psutil \
     xformers 
 
+RUN git clone https://github.com/comfyanonymous/ComfyUI.git
+
 EXPOSE 8188
 CMD ["python", "/app/ComfyUI/main.py", "--listen", "--port", "8188"]
 # RUN git clone https://github.com/comfyanonymous/ComfyUI.git
