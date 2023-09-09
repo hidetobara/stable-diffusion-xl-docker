@@ -1,10 +1,10 @@
 #!/bin/bash
 
-accelerate launch --num_cpu_threads_per_process 2 sdxl_train_network.py \
-    --pretrained_model_name_or_path="/models/checkpoints/cherryPickerXL_v25.safetensors" \
-    --dataset_config="data/dd.toml" \
-    --output_dir="/app/out/" \
-    --output_name="dd" \
+accelerate launch --num_cpu_threads_per_process 2 sd-scripts/sdxl_train_network.py \
+    --pretrained_model_name_or_path="/app/models/checkpoints/cherryPickerXL_v25.safetensors" \
+    --dataset_config="/app/run/data/lala.toml" \
+    --output_dir="/app/fine-tuned/" \
+    --output_name="lala" \
     --save_model_as=safetensors \
     --max_train_steps=750 \
     --learning_rate=4e-07 \
@@ -23,4 +23,3 @@ accelerate launch --num_cpu_threads_per_process 2 sdxl_train_network.py \
     --network_dim 32 \
     --xformers \
     --cache_text_encoder_outputs
-

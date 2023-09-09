@@ -31,4 +31,4 @@ xformers==0.0.16
 triton
 dadaptation==3.1
 # for kohya_ss library
--e .
+#-e .

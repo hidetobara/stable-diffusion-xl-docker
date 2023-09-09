@@ -19,7 +19,7 @@ RUN apt -y update && apt -y install git vim less python3-pip wget curl libgl1-me
 #RUN pip3 install git+https://github.com/facebookresearch/xformers.git@xformers
 
 WORKDIR /app
-COPY ./ /app
+COPY  ./requirements.txt ./
 RUN pip3 install --upgrade -r requirements.txt
 
 # sudo docker build -t tuning .

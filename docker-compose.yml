@@ -30,3 +30,20 @@ services:
     profiles:
       - sdxl-legacy
     command: python ComfyUI/main.py --listen --port 8188 --disable-cuda-malloc
+  lora:
+    build: ./lora/
+    profiles:
+      - lora
+    volumes:
+      - ./sd-scripts/:/app/sd-scripts/
+      - ./lora/:/app/run/
+      - ./models/:/app/models/
+      - ./fine-tuned/:/app/fine-tuned/
+    command: /bin/bash
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

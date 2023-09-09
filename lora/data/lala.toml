@@ -6,9 +6,9 @@ resolution = 512                            # 学習解像度
 batch_size = 5                              # バッチサイズ
 
   [[datasets.subsets]]
-  image_dir = '/app/data/lalafell'                     # 学習用画像を入れたフォルダを指定
+  image_dir = '/app/run/data/lala'                     # 学習用画像を入れたフォルダを指定
   class_tokens = 'lala girl'                # identifier class を指定
-  num_repeats = 10                          # 学習用画像の繰り返し回数
+  num_repeats = 3                          # 学習用画像の繰り返し回数
 
   # 以下は正則化画像を用いる場合のみ記述する。用いない場合は削除する
 #  [[datasets.subsets]]
