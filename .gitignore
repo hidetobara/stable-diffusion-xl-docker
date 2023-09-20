@@ -1,5 +1,7 @@
 # for dev
 ComfyUI/
+sd-scripts/
+data/
 
 # models
 *.safetensors

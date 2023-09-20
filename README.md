@@ -1,7 +1,7 @@
 # How to install
 
 ## Setup
-docker compose --profile setup up --build
+docker compose up setup --build
 
 ## Run ComfyUI
-docker compose --profile sdxl up --build
+docker compose up sdxl --build

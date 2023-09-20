@@ -3,19 +3,16 @@ version: '3.9'
 services:
   setup:
     build: ./setup/
-    profiles:
-      - setup
     volumes:
       - .:/app
     command: bash /app/setup/download.sh
   sdxl:
     build: ./sdxl/
-    profiles:
-      - sdxl
     command: python ComfyUI/main.py --listen --port 8188
     volumes:
       - ./models/:/app/ComfyUI/models/
       - ./output/:/app/ComfyUI/output/
+      - ./custom_nodes/:/app/ComfyUI/custom_nodes/
     ports:
       - "8188:8188"
     deploy:
