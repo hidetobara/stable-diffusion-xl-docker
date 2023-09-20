@@ -6,7 +6,7 @@ services:
     volumes:
       - .:/app
     command: bash /app/setup/download.sh
-  sdxl:
+  sdxl: &base_sdxl
     build: ./sdxl/
     command: python ComfyUI/main.py --listen --port 8188
     volumes:
@@ -22,3 +22,8 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
+  sdxl-legacy:
+    <<: *base_sdxl
+    profiles:
+      - sdxl-legacy
+    command: python ComfyUI/main.py --listen --port 8188 --disable-cuda-malloc
