@@ -6,7 +6,8 @@ wget -nc -P "models/checkpoints/" "https://huggingface.co/stabilityai/stable-dif
 wget -nc -P "models/checkpoints/" "https://huggingface.co/stabilityai/sdxl-vae/resolve/main/sdxl_vae.safetensors"
 
 # for Control-Net
-wget -nc -P "models/controlnet/" "https://huggingface.co/diffusers/controlnet-canny-sdxl-1.0/resolve/main/diffusion_pytorch_model.fp16.safetensors"
+wget -nc -P "models/controlnet/" "https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_canny_mid.safetensors"
+wget -nc -P "models/controlnet/" "https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_depth_mid.safetensors"
 
 git clone https://github.com/ltdrdata/ComfyUI-Manager.git custom_nodes/ComfyUI-Manager/
 

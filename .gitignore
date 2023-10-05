@@ -3,6 +3,8 @@ ComfyUI/
 sd-scripts/
 data/
 
+*.info
+
 # models
 *.safetensors
 *.ckpt
