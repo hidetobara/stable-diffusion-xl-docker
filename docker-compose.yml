@@ -8,6 +8,7 @@ services:
     command: bash /app/setup/download.sh
   sdxl: &base_sdxl
     build: ./sdxl/
+    shm_size: '2gb'
     command: python ComfyUI/main.py --listen --port 8188
     volumes:
       - ./models/:/app/ComfyUI/models/

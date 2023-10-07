@@ -15,7 +15,8 @@ RUN pip3 install torchsde \
     tqdm \
     psutil \
     xformers \
-    GitPython
+    GitPython \
+    opencv-python
 
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git
 
