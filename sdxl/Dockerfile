@@ -1,8 +1,10 @@
 FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-devel
 
+ENV DEBIAN_FRONTEND noninteractive
+
 WORKDIR /app
 
-RUN apt update && apt -y install python3-pip less vim wget git libgl1-mesa-dev
+RUN apt update && apt -y install python3-pip less vim wget git libgl1-mesa-dev libglib2.0-0
 RUN pip3 install torchsde \
     einops \
     transformers>=4.25.1 \
@@ -16,7 +18,8 @@ RUN pip3 install torchsde \
     psutil \
     xformers \
     GitPython \
-    opencv-python
+    opencv-python \
+    scikit-image
 
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git
 
