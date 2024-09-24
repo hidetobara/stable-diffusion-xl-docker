@@ -1,14 +1,14 @@
 # for dev
 ComfyUI/
-sd-scripts/
-data/
 
-*.info
+*.out
 
 # models
 *.safetensors
 *.ckpt
+*.pt
 *.yaml
+*.info
 
 # output
 *.png

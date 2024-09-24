@@ -1,19 +1,15 @@
 version: '3.9'
 
 services:
-  setup:
-    build: ./setup/
-    volumes:
-      - .:/app
-    command: bash /app/setup/download.sh
   sdxl: &base_sdxl
-    build: ./sdxl/
+    build: ./
     shm_size: '2gb'
     command: python ComfyUI/main.py --listen --port 8188
     volumes:
       - ./models/:/app/ComfyUI/models/
       - ./output/:/app/ComfyUI/output/
       - ./custom_nodes/:/app/ComfyUI/custom_nodes/
+      - ./setup/:/app/setup/
     ports:
       - "8188:8188"
     deploy:
@@ -23,8 +19,3 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
-  sdxl-legacy:
-    <<: *base_sdxl
-    profiles:
-      - sdxl-legacy
-    command: python ComfyUI/main.py --listen --port 8188 --disable-cuda-malloc
