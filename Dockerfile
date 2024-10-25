@@ -22,6 +22,7 @@ RUN pip3 install torchsde \
     "kornia>=0.7.1" \
     spandrel \
     soundfile \
-    opencv-python
+    opencv-python \
+    GitPython
 
 COPY ComfyUI /app/ComfyUI

@@ -1,8 +1,11 @@
-# How to install
+# First, install
 git clone https://github.com/comfyanonymous/ComfyUI.git
 
-## Test ComfyUI
+# Build
+docker compose build sdxl
+
+# Test ComfyUI
 docker compose run --rm --service-ports /bin/bash
 
-## Run ComfyUI
+# Run ComfyUI
 docker compose up sdxl --build
