@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  sdxl: &base_sdxl
+  sdxl:
     build: ./
     shm_size: '2gb'
     command: python ComfyUI/main.py --listen --port 8188
