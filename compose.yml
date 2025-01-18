@@ -1,7 +1,9 @@
 version: '3.9'
 
 services:
-  sdxl:
+  sdxl: &base_sdxl
+    profiles:
+      - ryzen37
     build: ./
     shm_size: '2gb'
     command: python ComfyUI/main.py --listen --port 8188
@@ -19,3 +21,12 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
+  sdxl_ryzen27:
+    <<: *base_sdxl
+    profiles:
+      - ryzen27
+    volumes:
+      - /data/models/:/app/ComfyUI/models/
+      - /data/output/:/app/ComfyUI/output/
+      - ./custom_nodes/:/app/ComfyUI/custom_nodes/
+      - ./setup/:/app/setup/
