@@ -27,6 +27,6 @@ services:
       - ryzen27
     volumes:
       - /data/models/:/app/ComfyUI/models/
-      - /data/output/:/app/ComfyUI/output/
+      - ./output/:/app/ComfyUI/output/
       - ./custom_nodes/:/app/ComfyUI/custom_nodes/
       - ./setup/:/app/setup/
