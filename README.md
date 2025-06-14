@@ -8,4 +8,4 @@ docker compose build sdxl
 docker compose run --rm --service-ports /bin/bash
 
 # Run ComfyUI
-docker compose up sdxl --build
+docker compose --profile ryzen27 up
