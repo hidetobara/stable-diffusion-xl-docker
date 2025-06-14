@@ -11,4 +11,7 @@ wget -nc -P "/app/models/controlnet/" "https://huggingface.co/lllyasviel/sd_cont
 
 git clone https://github.com/ltdrdata/ComfyUI-Manager.git custom_nodes/ComfyUI-Manager/
 
+# Flux
+# https://comfyui-wiki.com/ja/tutorial/advanced/flux1-comfyui-guide-workflow-and-examples
+
 echo "Ready to run sdxl !"
